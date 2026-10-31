@@ -1,3 +1,4 @@
+
 [[source]]
 url = "https://pypi.org/simple"
 verify_ssl = true
@@ -18,3 +19,15 @@ pytest = "7.2.0"
 
 [requires]
 python_full_version = "3.8.13"
+python_full_version = "3.8.13"
+python_version = "3.12"
+[packages]
+flask = "2.2.2"
+flask-sqlalchemy = "3.0.3"
+Werkzeug = "2.2.2"
+marshmallow = "3.20.1"
+faker = "15.3.2"
+flask-migrate = "4.0.0"
+pytest = "7.2.0"
+
+

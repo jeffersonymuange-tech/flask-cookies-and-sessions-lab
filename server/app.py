@@ -27,8 +27,14 @@ def index_articles():
 
 @app.route('/articles/<int:id>')
 def show_article(id):
-    pass
+    session['page_views'] = session.get('page_views') or 0
+    session['page_views'] += 1
 
+    if session['page_views'] <= 3:
+        article = Article.query.filter(Article.id == id).first()
+        return make_response(ArticleSchema().dump(article), 200)
+
+    return make_response({'message': 'Maximum pageview limit reached'}, 401)
 
 if __name__ == '__main__':
     app.run(port=5555)
